@@ -1,0 +1,14 @@
+<!--pages/wxml/index.wxml-->
+<view class="info">
+  <view>当前时间:</view>
+  <view>{{time}}</view>
+  <view>{{msg}}</view>
+</view>
+<block class="container">
+  <button class="item1" bindtap='change'> 改变文本(次数累计) </button>
+  <button class="item2" bindtap='log'> 查看启动日志 </button>
+  <button class="item3" bindtap='g'> 显示 global data </button>
+</block>
+<button hover-class="none" catch:longpress='ani' bindtap='animation'>动画开发</button>
+
+<button>单纯实验点击态样式效果</button>

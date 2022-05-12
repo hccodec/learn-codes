@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+*node_modules
+*.bak
+=======
+ASCode
+LaTeXTutorial.zip
+*/node_modules/
+*/gradle/
+*/.idea/
+tmp
+>>>>>>> 1e9f6aee (This is the first upload work.)

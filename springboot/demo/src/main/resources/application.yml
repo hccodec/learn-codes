@@ -1,0 +1,9 @@
+server:
+    servlet:
+        session:
+            timeout: PT60M
+    compression:
+        enabled:
+            true
+        mime-types:
+            application/json,application/xml,text/html,text/plain,text/css,application/x-javascript

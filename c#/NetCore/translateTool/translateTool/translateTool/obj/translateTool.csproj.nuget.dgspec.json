@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\documents\\learn-codes\\c#\\NetCore\\translateTool\\translateTool\\translateTool\\translateTool.csproj": {}
+  },
+  "projects": {
+    "D:\\documents\\learn-codes\\c#\\NetCore\\translateTool\\translateTool\\translateTool\\translateTool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\documents\\learn-codes\\c#\\NetCore\\translateTool\\translateTool\\translateTool\\translateTool.csproj",
+        "projectName": "translateTool",
+        "projectPath": "D:\\documents\\learn-codes\\c#\\NetCore\\translateTool\\translateTool\\translateTool\\translateTool.csproj",
+        "packagesPath": "C:\\Users\\84697\\.nuget\\packages\\",
+        "outputPath": "D:\\documents\\learn-codes\\c#\\NetCore\\translateTool\\translateTool\\translateTool\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\84697\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17763"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17763": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17763": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.9, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

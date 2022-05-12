@@ -1,0 +1,50 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:overlapAnchor">false</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="android:alertDialogTheme">@style/MyDialog</item>
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:navigationBarColor">@color/design_default_color_primary_dark</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="bottomNavigationStyle">@style/bottomNavigationStyle</item>
+    </style>
+
+    <style name="MyDialog" parent="AppTheme">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/simple_stroke</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:colorButtonNormal">#965dd1fb</item>
+    </style>
+
+    <!-- Toolbar主题设置-->
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat">
+        <!-- Toolbar背景颜色-->
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <!--菜单图标颜色-->
+        <item name="colorControlNormal">@color/white</item>
+        <!-- Toolbar标题文字颜色-->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:textColorSecondary">@color/green</item>
+    </style>
+
+    <!--Toolbar菜单样式-->
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
+    </style>
+
+    <style name="ToolBarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+    <style name="MySpinner" parent="Base.ThemeOverlay.AppCompat">
+        <item name="android:overlapAnchor">false</item>
+    </style>
+
+    <style name="bottomNavigationStyle" parent="AppTheme" />
+
+</resources>

@@ -1,0 +1,10 @@
+<!--pages/test=wxss/test.wxml-->
+<text>以下是实验区域:\n</text>
+<text>------------------------------\n</text>
+<view>
+  <view class="flex flex-center choose-item active" bindtap='checked' data-app="first" style='background-color:{{first}}; color:{{firstcolor}}'>001</view>
+  <view class="flex flex-center choose-item" bindtap='checked' data-app="second" style='background-color:{{second}};color:{{secondcolor}}'>002</view>
+  <view class="flex flex-center choose-item" bindtap='checked' data-app="third" style='background-color:{{third}};color:{{thirdcolor}}'>003</view>
+  <view class="flex flex-center choose-item" bindtap='checked' data-app="fourth" style='background-color:{{fourth}};color:{{fourthcolor}}'>004</view>
+</view>
+<button bindtap='a'>再试一遍点击态效果</button>

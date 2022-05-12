@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. 西南交大应用物理系韩宝佳
+  -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  设置背景色  -->
+    <item
+        android:id="@android:id/background"
+        android:drawable="@color/transparent"/>
+    <!--  设置进度条颜色  -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid
+                    android:width="1dp"
+                    android:color="@color/white_overlay" />
+            </shape>
+        </clip>
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <solid
+                    android:width="1dp"
+                    android:color="@color/colorAccentAlpha" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

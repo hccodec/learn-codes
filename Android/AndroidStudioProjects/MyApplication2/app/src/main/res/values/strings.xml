@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Organisation Communication System</string>
+    <string name="title" translatable="false">@string/app_name</string>
+    <string name="log_in">LOG IN</string>
+    <string name="copyright">©2018–2023 BobHam.All Rights Reserved.</string>
+    <string name="USERNAME">Username :</string>
+    <string name="PASSWORD">Password :</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="submit">submit</string>
+    <string name="tip_ifError">ERROR: Check your ID or password.</string>
+    <string name="tip_ifTotallyEmpty">EMPTY: Please input your information.</string>
+    <string name="tip_ifEmpty">EMPTY: Please input your information completely.</string>
+    <string name="add" translatable="false">+</string>
+    <string name="warningPic">warning</string>
+    <string name="typingTip">Careful While Typing</string>
+    <string name="correct">correct</string>
+    <string name="incorrect">incorrect</string>
+    <string name="languageChooser">Choose your target language</string>
+    <string name="hint_dialog">Hint</string>
+    <string name="confirm_dialog">confirm</string>
+    <string name="cancel_dialog">cancel</string>
+    <string name="ClearLanguageSetting">DeleteLanguagePreferences</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

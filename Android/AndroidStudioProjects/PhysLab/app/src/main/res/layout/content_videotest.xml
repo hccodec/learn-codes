@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.physswjtu.srtp2019.widgets.GradualView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/video_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video"
+            android:layout_marginTop="50dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="play" />
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="pause" />
+
+            <Button
+                android:id="@+id/replay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="replay" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_control"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white_overlay"
+                android:maxHeight="60dp"
+                android:paddingVertical="5dp"
+                android:text="https://jdvodrvfb210d.vod.126.net/jdvodrvfb210d/nos/mp4/2018/10/09/1010590533_0cb9e85d4d084a1b9d6a80c38ef6d7ad_sd.mp4?ak=7909bff134372bffca53cdc2c17adc27a4c38c6336120510aea1ae1790819de874ac9501db1c2d964e513ebc7f17378d5a451d1e2b17bec8ee7cbf45bc42610c3059f726dc7bb86b92adbc3d5b34b132865b8202ddce3c4c76932d345f9312c5ab1751379953e9446561f60f0e4ab9c0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:hint="键入您想播放的视频的地址"
+                android:maxHeight="150dp"
+                android:paddingVertical="20dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark" />
+
+        </LinearLayout>
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

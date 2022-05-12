@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>react-native 组件间通信简述 | Hccodec 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="父组件向子组件通讯通讯是单向的，数据必须是由一方传到另一方。在 React 中，父组件可以向子组件通过传 props 的方式，向子组件进行通讯。 12345678910111213141516171819202122import React,&amp;#123;Component,PureComponent&amp;#125; from &amp;#x27;react&amp;#x27;import &amp;#123;Text,Vie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native 组件间通信简述">
+<meta property="og:url" content="https://hccodec.github.io/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Hccodec 的博客">
+<meta property="og:description" content="父组件向子组件通讯通讯是单向的，数据必须是由一方传到另一方。在 React 中，父组件可以向子组件通过传 props 的方式，向子组件进行通讯。 12345678910111213141516171819202122import React,&amp;#123;Component,PureComponent&amp;#125; from &amp;#x27;react&amp;#x27;import &amp;#123;Text,Vie">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-04T02:20:34.000Z">
+<meta property="article:modified_time" content="2022-03-04T02:25:21.606Z">
+<meta property="article:author" content="hccodec">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hccodec 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hccodec 的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hccodec.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-native 组件间通信简述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react-native 组件间通信简述
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="父组件向子组件通讯"><a href="#父组件向子组件通讯" class="headerlink" title="父组件向子组件通讯"></a>父组件向子组件通讯</h2><p>通讯是单向的，数据必须是由一方传到另一方。在 React 中，父组件可以向子组件通过传 props 的方式，向子组件进行通讯。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component,PureComponent&#125; from &#x27;react&#x27;</span><br><span class="line">import &#123;Text,View&#125; from &#x27;react-native&#x27;</span><br><span class="line">class Parent extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      msg:&#x27;I am your father!&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;Son_1 msg=&#123;this.state.msg&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son_1 extends PureComponent &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;Text&gt;&#123;this.props.msg&#125;&lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果父组件与子组件之间不止一个层级，如 Parent 与 Child_1_1 这样的关系，可通过 … 运算符（Object 剩余和展开属性），将父组件的信息，以更简洁的方式传递给更深层级的子组件。通过这种方式，不用考虑性能的问题，通过 babel 转义后的 … 运算符 性能和原生的一致，且上级组件 props 与 state 的改变，会导致组件本身及其子组件的生命周期改变。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Son_1 extends PureComponent &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;Text&gt;&#123;this.props.msg&#125;&lt;/Text&gt;</span><br><span class="line">        &lt;Son_1_1 &#123;...this.props&#125;/&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son_1_1 extends PureComponent&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Text&gt;&#123;this.props.msg&#125;&lt;/Text&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="子组件向父组件通讯"><a href="#子组件向父组件通讯" class="headerlink" title="子组件向父组件通讯"></a>子组件向父组件通讯</h2><p>在上一个例子中，父组件可以通过传递 props 的方式，自顶而下向子组件进行通讯。而子组件向父组件通讯，同样也需要父组件向子组件传递 props 进行通讯，只是父组件传递的，是作用域为父组件自身的函数，子组件调用该函数，将子组件想要传递的信息，作为参数，传递到父组件的作用域中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component,PureComponent&#125; from &#x27;react&#x27;</span><br><span class="line">import &#123;Text,TouchableOpacity&#125; from &#x27;react-native&#x27;</span><br><span class="line">class Parent extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  // 父组件定义的方法</span><br><span class="line">  onClickSon = (msgFromSon) =&gt; &#123;</span><br><span class="line">    console.log(msgFromSon)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Son onClickSon=&#123;this.onClickSon&#125;/&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son_1 extends PureComponent &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;TouchableOpacity onPress=&#123;()=&gt; this.props.onClickSon(&#x27;I am your son&#x27;)&#125;&gt;</span><br><span class="line">        &lt;Text&gt;爸爸去哪&lt;/Text&gt;  </span><br><span class="line">      &lt;/TouchableOpacity&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="观察者模式-DeviceEventEmitter"><a href="#观察者模式-DeviceEventEmitter" class="headerlink" title="观察者模式 - DeviceEventEmitter"></a>观察者模式 - DeviceEventEmitter</h2><p>解决了兄弟组件通信的问题</p>
+<p>在传统的前端解耦方面，观察者模式作为比较常见一种设计模式，大量使用在各种框架类库的设计当中。即使我们在写 React，在写 JSX，我们核心的部分还是 JavaScript。</p>
+<p>观察者模式也叫 发布者-订阅者模式，发布者发布事件，订阅者监听事件并做出反应，对于兄弟组件的通信，我们一般使用 DeviceEventEmitter 解决。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component,PureComponent&#125; from &#x27;react&#x27;</span><br><span class="line">import &#123;View,DeviceEventEmitter&#125; from &#x27;react-native&#x27;</span><br><span class="line">class Parent extends Component&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">        &lt;Son_1/&gt;</span><br><span class="line">        &lt;Son_2/&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son_1 extends PureComponent&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      // 发布 msg 事件</span><br><span class="line">      DeviceEventEmitter.emit(&#x27;sendMsg&#x27;, &#123;text:&#x27;Hello Brother&#x27;&#125;);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son_2 extends PureComponent&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.listener =DeviceEventEmitter.addListener(&#x27;sendMsg&#x27;,function(param)&#123;</span><br><span class="line">     //  use param do something</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  //最后别忘了移除通知</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    this.listener.remove();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考地址：<a target="_blank" rel="noopener" href="https://www.javascriptcn.com/read-36620.html">https://www.javascriptcn.com/read-36620.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/" data-id="cl0bsr0r40009rcsffbkxctq2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue 的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2022/03/04/windows%E4%B8%8Bnvm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">windows 下 nvm 的安装与管理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">HTML实现水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/">NodeJS 从安装到卸载再到重装</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/">React-Native 定义事件基类 EventBus</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/">Office 激活密钥</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/">conda及pip配置文件 - 已整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 hccodec<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

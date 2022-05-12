@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#2472A0</color>
+    <color name="colorAccentAlpha">#B02472A0</color>
+    <color name="colorPrimary">#1F8ED8</color>
+    <color name="colorPrimaryDark">#243FA0</color>
+    <color name="white_overlay">#AFFF</color>
+    <color name="black_overlay">#6000</color>
+
+    <color name="radio_unselect">#777777</color>
+    <color name="radio_select">@color/colorPrimary</color>
+</resources>

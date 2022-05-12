@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>conda及pip配置文件 - 已整理 | Hccodec 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="conda 清华源路径：-（Windows）%USERPROFILE%&#x2F;.condarc-（Linux）~&#x2F;.condarc 检查命令：conda config --show-sources（事实上，show--sources只需输入到show-即可达到效果） 1234567891011121314151617181920212223channels:  - defaultsshow_channe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="conda及pip配置文件 - 已整理">
+<meta property="og:url" content="https://hccodec.github.io/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Hccodec 的博客">
+<meta property="og:description" content="conda 清华源路径：-（Windows）%USERPROFILE%&#x2F;.condarc-（Linux）~&#x2F;.condarc 检查命令：conda config --show-sources（事实上，show--sources只需输入到show-即可达到效果） 1234567891011121314151617181920212223channels:  - defaultsshow_channe">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-04T02:20:34.000Z">
+<meta property="article:modified_time" content="2022-03-04T02:22:46.961Z">
+<meta property="article:author" content="hccodec">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hccodec 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hccodec 的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hccodec.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-conda及pip配置文件 - 已整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      conda及pip配置文件 - 已整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="conda-清华源"><a href="#conda-清华源" class="headerlink" title="conda 清华源"></a>conda 清华源</h2><p>路径：<br>-（Windows）<code>%USERPROFILE%/.condarc</code><br>-（Linux）<code>~/.condarc</code></p>
+<p>检查命令：<code>conda config --show-sources</code>（事实上，<code>show--sources</code>只需输入到<code>show-</code>即可达到效果）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">ssl_verify: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="conda-北外镜像"><a href="#conda-北外镜像" class="headerlink" title="conda 北外镜像"></a>conda 北外镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/</span><br><span class="line">#Conda Forge</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">#msys2（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">#bioconda（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">#menpo（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">#pytorch</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"># for legacy win-64（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/peterjc123/</span><br><span class="line">ssl_verify: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="pip-阿里源"><a href="#pip-阿里源" class="headerlink" title="pip 阿里源"></a>pip 阿里源</h2><p>路径：<br>-（Windows）<code>%USERPROFILE%/pip/pip.ini</code><br>-（Linux）<code>~/.pip/pip.conf</code></p>
+<p>检查命令：<code>pip config list</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 6000</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">trusted-host = mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>参考地址</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/" data-id="cl0bsr0qw0004rcsf2841ffux" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Office 激活密钥
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">WSL linux相关设置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">HTML实现水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/">NodeJS 从安装到卸载再到重装</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/">React-Native 定义事件基类 EventBus</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/">Office 激活密钥</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/">conda及pip配置文件 - 已整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 hccodec<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

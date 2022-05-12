@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:contentInsetStart="20dp"
+        android:contentInsetEnd="20dp"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:includeFontPadding="false"
+                android:padding="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/fa_angle_left_before"
+                android:textColor="@android:color/white"
+                android:textSize="35sp"
+                app:isIconFont="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/home">
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="testFill"
+                    android:text="@string/action_register"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="10dp"
+                    android:includeFontPadding="false"
+                    android:text="|"
+                    android:textColor="@color/white_overlay"
+                    android:textSize="25sp" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/login_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white_overlay"
+                    android:textSize="20sp"
+                    android:transitionName="share"
+                    tools:text="教师/学生" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/dialog_button"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/login_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="0dp"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <RelativeLayout
+                android:id="@+id/field0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_username_student" />
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_id_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/field1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_passwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_password" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_show_passwd_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:padding="10dp"
+                    android:text="@string/fa_eye_slash_before"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_passwd_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/field11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_passwd_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_password_confirm" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_show_passwd_confirm_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:padding="10dp"
+                    android:text="@string/fa_eye_slash_before"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_passwd_confirm_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/field2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_name" />
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_name_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/register_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:fadingEdge="vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <com.physswjtu.srtp2019.widgets.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fa_asterisk_before"
+                        android:textSize="20sp"
+                        app:isIconFont="true" />
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/register_sex_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:maxLength="1"
+                    android:paddingVertical="15dp"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/register_sex_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:maxLength="1"
+                    android:paddingVertical="15dp"
+                    android:text="女" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/field3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_school" />
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_school_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/field4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_className"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_classname" />
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_className_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/field5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_shape"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <EditText
+                    android:id="@+id/register_phoneNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center"
+                    android:textColorHint="@android:color/darker_gray"
+                    tools:hint="@string/hint_phone_num" />
+
+
+                <com.physswjtu.srtp2019.widgets.TextView
+                    android:id="@+id/register_phoneNum_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:includeFontPadding="false"
+                    android:padding="10dp"
+                    android:text="&#xf00d;"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:isIconFont="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_ripple_blue"
+        android:text="@string/action_register"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>

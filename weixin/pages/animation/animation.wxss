@@ -1,0 +1,22 @@
+/* pages/animation/animation.wxss */
+
+.motto {
+  margin-top: 200px;
+}
+
+.button-hover {
+  background: pink;
+}
+
+.container {
+  border-color: black;
+  border-width: 122rpx;
+  padding: 0rpx
+}
+
+.image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

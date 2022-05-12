@@ -1,0 +1,32 @@
+/* pages/wxml/index.wxss */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-hover {
+  background: rgb(138, 17, 37);
+  color: rgb(255, 238, 0);
+}
+
+.container {
+  display: flex;
+  width: 400px;
+}
+
+.item1 {
+  width: 120px;
+  flex-shrink: 2;
+}
+
+.item2 {
+  width: 150px;
+  flex-shrink: 3;
+}
+
+.item3 {
+  width: 180px;
+}

@@ -1,0 +1,16 @@
+﻿/osver:6.2
+/appcontainer
+"/runtime:mrt100_app"
+/eh:clr
+/pdb
+"/nativeLink:C:\Users\84697\.nuget\packages\runtime.win10-x64.microsoft.net.native.compiler\2.2.8-rel-28605-00\tools\x64\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\obj\x64\Release\ilc\intermediate\MDIL\Wicher3ModDevelopTools.mdilexe"
+"/i:D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\obj\x64\Release\ilc\intermediate\MDIL"
+"/out:D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\obj\x64\Release\ilc\intermediate\Native\Wicher3ModDevelopTools.exe"
+"/pdbAltPath:D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\bin\x64\Release\ilc"
+"/res:D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\obj\x64\Release\ilc\intermediate\Native.res"
+"/i:C:\Users\84697\.nuget\packages\runtime.win10-x64.microsoft.net.native.sharedlibrary\2.2.7-rel-28605-00\tools\SharedLibrary\ret\MDIL"
+/shimexe
+"/classlib:SharedLibrary"

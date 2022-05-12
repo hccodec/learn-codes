@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/logo_settings"
+        android:shortcutId="login"
+        android:shortcutShortLabel="@string/action_login">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.physswjtu.srtp2019.LoginActivity"
+            android:targetPackage="com.physswjtu.srtp2019" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/logo_settings"
+        android:shortcutId="register"
+        android:shortcutShortLabel="@string/action_register">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.physswjtu.srtp2019.RegisterActivity"
+            android:targetPackage="com.physswjtu.srtp2019" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/logo_settings"
+        android:shortcutId="video"
+        android:shortcutShortLabel="@string/action_video">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.physswjtu.srtp2019.VideoActivity"
+            android:targetPackage="com.physswjtu.srtp2019" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/logo_settings"
+        android:shortcutId="live"
+        android:shortcutShortLabel="@string/action_live">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.physswjtu.srtp2019.LiveActivity"
+            android:targetPackage="com.physswjtu.srtp2019" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. 西南交大应用物理系韩宝佳
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/dialog">
+
+    <LinearLayout
+        android:id="@+id/dialog_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <!-- Icon (default is gone)  -->
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/dialog_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@id/dialog_title"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:visibility="gone"
+                app:isIconFont="true"
+                tools:text="@string/fa_circle_o_notch_before"
+                tools:visibility="visible" />
+            <!-- Title (default is gone) -->
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="这是title"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginVertical="10dp"
+            android:background="@android:color/white" />
+
+        <!-- Dialog Message (default is gone)  -->
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/white"
+            tools:text="Dialog Message" />
+
+
+        <RelativeLayout
+            android:id="@+id/field0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/shape_selector_transparent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp">
+
+            <EditText
+                android:id="@+id/dialog_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:outlineAmbientShadowColor="@color/colorAccentAlpha"
+                android:background="@android:color/transparent"
+                android:paddingVertical="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@android:color/darker_gray" />
+
+
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/dialog_edit_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="-10dp"
+                android:background="@android:color/transparent"
+                android:includeFontPadding="false"
+                android:padding="10dp"
+                android:text="&#xf00d;"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                app:isIconFont="true" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_field"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_header">
+            <!-- Button (default is gone) -->
+            <Button
+                android:id="@+id/dialog_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="80dp"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/dialog_button"
+                android:textColor="@color/white_overlay"
+                android:visibility="gone"
+                tools:text="按钮"
+                tools:visibility="visible" />
+
+            <!-- Button2 (default is gone) -->
+            <Button
+                android:id="@+id/dialog_button2"
+                android:layout_width="80dp"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/dialog_button"
+                android:textColor="@color/white_overlay"
+                android:visibility="gone"
+                tools:text="按钮"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

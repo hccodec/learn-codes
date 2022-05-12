@@ -1,0 +1,23 @@
+.title {
+    text-align: center;
+    color: black;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.5px;
+    margin: 10px;
+    /* border: 3px double #ccc; */
+    text-shadow: 0 0 10px #aaa
+}
+
+.main {
+    background: linear-gradient(#ab5dce22, #34bd7a11);
+    padding: 0px;
+    margin: 0px
+}
+
+.horizontalView {
+    width: 100px;
+    text-align: start;
+    font-size: 20px;
+    margin: 5px;
+    display: inline-block
+}

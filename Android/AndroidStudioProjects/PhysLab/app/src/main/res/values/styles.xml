@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="MyTheme.Fullscreen" parent="MyTheme.NoActionBar">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@xml/layer_list</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="MyTheme.PreLogin" parent="MyTheme.NoActionBar">
+        <item name="android:windowBackground">@xml/layer_list</item>
+    </style>
+
+    <style name="MyTheme.Login" parent="MyTheme.NoActionBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowAnimationStyle">@style/mDialogAnim</item>-->
+    </style>
+
+    <style name="mDialogAnim" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterTransition">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="preLoginAnim" parent="@android:style/Animation">
+        <item name="android:windowEnterTransition">@anim/scale_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/white_overlay</item>
+    </style>
+    <!--全屏属性-->
+    <style name="MyTheme.NoActionBar" parent="MyTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MyTheme.Browser" parent="MyTheme">
+        <item name="android:windowBackground">@xml/layer_list</item>
+    </style>
+
+    <style name="MyTheme.Main" parent="MyTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+
+    <!--对话框样式-->
+    <style name="mDialog" parent="Theme.AppCompat.Dialog">
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--没有标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景昏暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="RadioGroupButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/tab_indicator_text</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:colorBackground">#880A81FD</item>  <!-- 设置背景颜色-->
+        <item name="android:textColorSecondary">#ffffff</item>
+        <!--toolbar标题文字颜色-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="overlapAnchor">false</item>  <!--设置不覆盖锚点-->
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccentAlpha"
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:paddingBottom="2dp"
+    android:showDividers="middle">
+
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/pop_student"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="学生"
+        android:textColor="@android:color/white" />
+
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/pop_teacher"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="教师"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

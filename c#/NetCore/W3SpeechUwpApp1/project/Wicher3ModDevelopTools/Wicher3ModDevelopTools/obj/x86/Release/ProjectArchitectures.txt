@@ -1,0 +1,1 @@
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\Wicher3ModDevelopTools.csproj;x86

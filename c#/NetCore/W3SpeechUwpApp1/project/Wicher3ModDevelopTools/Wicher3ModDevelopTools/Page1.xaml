@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Wicher3ModDevelopTools.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Wicher3ModDevelopTools"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style x:Key="MouseStyle" TargetType="Rectangle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="20"/>
+        </Style>
+        <Style x:Key="TouchPenStyle" TargetType="Rectangle">
+            <Setter Property="Margin" Value="15" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="40" />
+        </Style>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <SplitView x:Name="mySplitView" DisplayMode="CompactInline"
+                   IsPaneOpen="False" CompactPaneLength="0">
+            <StackPanel VerticalAlignment="Center">
+                <Canvas Width="120" Height="120">
+                    <Rectangle Fill="Red" Height="44" Width="44"/>
+                    <Rectangle Fill="Blue" Height="44" Width="44" Canvas.Left="20" Canvas.Top="20"/>
+                    <Rectangle Fill="Green" Height="44" Width="44" Canvas.Left="40" Canvas.Top="40"/>
+                    <Rectangle Fill="Orange" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
+                </Canvas>
+                <Button HorizontalAlignment="Center"
+                    Click="Button_Click"
+                    Content="我是一个莫得感情的按钮"/>
+            </StackPanel>
+            <SplitView.Pane>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Name="greeting" Text="欢迎" FontSize="25" />
+            </SplitView.Pane>
+        </SplitView>
+        
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Content="返回" Click="GoBack_Click" />
+        </CommandBar>
+        
+        <VisualStateManager.VisualStateGroups><VisualStateGroup><VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="mySplitView.DisplayMode" Value="Inline"/>
+                        <Setter Target="mySplitView.IsPaneOpen" Value="True"/>
+                    </VisualState.Setters>
+        </VisualState></VisualStateGroup></VisualStateManager.VisualStateGroups>
+
+    </Grid>
+</Page>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. 西南交大应用物理系韩宝佳
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog"
+    android:padding="20dp">
+
+    <!-- Icon (default is gone)  -->
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/dialog_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@id/dialog_title"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:isIconFont="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/fa_circle_o_notch_before"
+        tools:visibility="visible" />
+    <!-- Title (default is gone) -->
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/dialog_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="图片预览"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/dialog_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginVertical="5dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/picPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_divider"
+        tools:srcCompat="@drawable/logo" />
+
+    <!-- Dialog Message (default is gone)  -->
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/picPreview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Dialog Message" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ROOT权限设置</string>
+    <string name="Name">内 部 通 讯 系 统</string>
+    <string name="log_in">登   录</string>
+</resources>

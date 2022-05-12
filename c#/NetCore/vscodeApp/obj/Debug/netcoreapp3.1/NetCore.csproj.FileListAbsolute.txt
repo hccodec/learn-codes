@@ -1,0 +1,14 @@
+d:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.exe
+D:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.deps.json
+D:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.runtimeconfig.json
+D:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.runtimeconfig.dev.json
+d:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.dll
+d:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\NetCore.pdb
+d:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.csprojAssemblyReference.cache
+d:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.AssemblyInfoInputs.cache
+d:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.AssemblyInfo.cs
+d:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.dll
+d:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.pdb
+D:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\CSkin.dll
+D:\Users\84697\Desktop\NetCore\bin\Debug\netcoreapp3.1\CSkin.xml
+D:\Users\84697\Desktop\NetCore\obj\Debug\netcoreapp3.1\NetCore.csproj.CopyComplete

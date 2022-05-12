@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7686e2</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4086ff</color>
+    <color name="white">@android:color/white</color> <!-- 白色 -->
+    <color name="green">@android:color/holo_green_light</color> <!-- 绿色 -->
+    <color name="orange">@android:color/holo_orange_dark</color> <!-- 橙色 -->
+    <color name="statusBar">#0c0e5d</color>
+    <color name="menuItemColor">@android:color/holo_red_light</color>
+</resources>

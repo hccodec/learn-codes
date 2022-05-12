@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test=wxss/test",
+    "pages/wxml/index",
+    "pages/animation/animation",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#685",
+    "navigationBarTitleText": "开发程序",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/test=wxss/test",
+        "text": "一级页面"
+      },
+      {
+        "pagePath": "pages/wxml/index",
+        "text": "二级页面"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

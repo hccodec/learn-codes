@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>@string/languageChooser</item>
+        <item>中文（zh_CN）</item>
+        <item>English(en_US)</item>
+    </string-array>
+</resources>

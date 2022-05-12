@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/tempbtn"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="测试通知栏信息提示的功能"
+            android:theme="@style/Theme.MaterialComponents" />
+
+
+        <Button
+            android:id="@+id/test"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="开发者测试" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title_template"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/field0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87">
+
+        <ImageView
+            android:id="@+id/circle_imageview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="恭喜发现开发者模式的神奇入口"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_badge_phys_school" />
+
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="10dp"
+            android:includeFontPadding="false"
+            android:text="|"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/login_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:transitionName="share"
+            tools:text="教师/学生" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/field0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_template"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        app:layout_constraintWidth_percent="0.7">
+
+        <RelativeLayout
+            android:id="@+id/field1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_shape"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:onClick="onClick"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            app:layout_constraintBottom_toTopOf="@id/field2"
+            app:layout_constraintTop_toBottomOf="@id/title_template">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:background="@android:color/transparent"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                android:paddingVertical="10dp"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray"
+                tools:hint="@string/hint_username_student" />
+
+            <com.physswjtu.srtp2019.widgets.RoundImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"
+                app:src="@drawable/timg" />
+
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/username_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:includeFontPadding="false"
+                android:onClick="onClick"
+                android:padding="10dp"
+                android:text="&#xf00d;"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:isIconFont="true" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/field2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_shape"
+            android:onClick="onClick"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            app:layout_constraintBottom_toTopOf="@id/loginbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/field1">
+
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/show_passwd_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:onClick="onClick"
+                android:padding="10dp"
+                android:text="@string/fa_eye_slash_before"
+                android:textSize="20sp"
+                app:isIconFont="true" />
+
+            <EditText
+                android:id="@+id/passwd"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:paddingVertical="10dp"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <com.physswjtu.srtp2019.widgets.TextView
+                android:id="@+id/passwd_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:includeFontPadding="false"
+                android:onClick="onClick"
+                android:padding="10dp"
+                android:text="&#xf00d;"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:isIconFont="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.physswjtu.srtp2019.widgets.TextView
+        android:id="@+id/loginbtn"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginVertical="20dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/btn_ripple_blue"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:onClick="onClick"
+        android:text="@string/fa_arrow_right_before"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:isIconFont="true"
+        app:layout_constraintBottom_toTopOf="@id/field3"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field0"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <LinearLayout
+        android:id="@id/field3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/field0"
+        app:layout_constraintVertical_bias="0.8">
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/registerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/baseline"
+            android:onClick="onClick"
+            android:text="现在注册"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/baseline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:includeFontPadding="false"
+            android:text="|"
+            android:visibility="gone" />
+
+        <com.physswjtu.srtp2019.widgets.TextView
+            android:id="@+id/find_passwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/baseline"
+            android:onClick="onClick"
+            android:text="找回密码"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

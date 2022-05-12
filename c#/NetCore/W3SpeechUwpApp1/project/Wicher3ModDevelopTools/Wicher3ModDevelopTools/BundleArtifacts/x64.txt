@@ -1,0 +1,2 @@
+MainPackage=D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\bin\x64\Release\Wicher3ModDevelopTools_1.0.0.0_x64.msix
+SymbolPackage=D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\Wicher3ModDevelopTools\Wicher3ModDevelopTools\obj\x64\Release\Symbols\Wicher3ModDevelopTools_1.0.0.0_x64.appxsym

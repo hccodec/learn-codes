@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TextView">
+        <attr name="isIconFont" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="innerrect">
+        <attr name="inner_width" format="dimension" /><!-- 控制扫描框的宽度 -->
+        <attr name="inner_height" format="dimension" /><!-- 控制扫描框的高度 -->
+        <attr name="inner_margintop" format="dimension" /><!-- 控制扫描框距离顶部的距离 -->
+        <attr name="inner_corner_color" format="color" /><!-- 控制扫描框四角的颜色 -->
+        <attr name="inner_corner_length" format="dimension" /><!-- 控制扫描框四角的长度 -->
+        <attr name="inner_corner_width" format="dimension" /><!-- 控制扫描框四角的宽度 -->
+        <attr name="inner_scan_bitmap" format="reference" /><!-- 控制扫描图 -->
+        <attr name="inner_scan_speed" format="integer" /><!-- 控制扫描速度 -->
+        <attr name="inner_scan_iscircle" format="boolean" /><!-- 控制小圆点是否展示 -->
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="copyright" translatable="false">©Copyright 2018 – 2023</string>
+    <string name="Name">Organisation Communication System</string>
+    <string name="log_in">LOG IN</string>
+</resources>

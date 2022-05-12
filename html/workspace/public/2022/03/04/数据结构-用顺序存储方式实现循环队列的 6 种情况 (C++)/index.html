@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据结构-用顺序存储方式实现循环队列的 6 种情况 (C++) | Hccodec 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="用顺序存储方式实现循环队列的 6 种情况（可运行）王道书提到的 线性队列 实现的 6 种情况，其对应代码实现如下。为增加可读性使用 ANSI 代码设置输出文本颜色，Windows 系统建议使用 powershell 运行。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-用顺序存储方式实现循环队列的 6 种情况 (C++)">
+<meta property="og:url" content="https://hccodec.github.io/blog/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%94%A8%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%9A%84%206%20%E7%A7%8D%E6%83%85%E5%86%B5%20(C++)/index.html">
+<meta property="og:site_name" content="Hccodec 的博客">
+<meta property="og:description" content="用顺序存储方式实现循环队列的 6 种情况（可运行）王道书提到的 线性队列 实现的 6 种情况，其对应代码实现如下。为增加可读性使用 ANSI 代码设置输出文本颜色，Windows 系统建议使用 powershell 运行。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-04T02:20:34.000Z">
+<meta property="article:modified_time" content="2022-03-04T02:22:07.914Z">
+<meta property="article:author" content="hccodec">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hccodec 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hccodec 的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hccodec.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据结构-用顺序存储方式实现循环队列的 6 种情况 (C++)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%94%A8%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%9A%84%206%20%E7%A7%8D%E6%83%85%E5%86%B5%20(C++)/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构-用顺序存储方式实现循环队列的 6 种情况 (C++)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用顺序存储方式实现循环队列的-6-种情况（可运行）"><a href="#用顺序存储方式实现循环队列的-6-种情况（可运行）" class="headerlink" title="用顺序存储方式实现循环队列的 6 种情况（可运行）"></a>用顺序存储方式实现循环队列的 6 种情况（可运行）</h2><p>王道书提到的 <strong>线性队列</strong> 实现的 6 种情况，其对应代码实现如下。<br>为增加可读性使用 ANSI 代码设置输出文本颜色，Windows 系统建议使用 <code>powershell</code> 运行。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.cpp</span></span><br><span class="line"><span class="comment">// 编译运行命令 g++ test.cpp -otest ; ./test</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ElemType int</span></span><br><span class="line"><span class="comment">// 队尾指针Q.rear的位置：</span></span><br><span class="line"><span class="comment">//   (a)指向表尾的后一位   (b)指向表尾</span></span><br><span class="line"><span class="comment">// 判断队满队空的三种方法：</span></span><br><span class="line"><span class="comment">//   1. 牺牲存储单元  2.引入size变量   3.引入tag变量（true表示入队，false表示出队）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：C++取模运算所得结果的符号与被除数相同。</span></span><br><span class="line"><span class="comment">//a1</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">a1</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(a1 &amp;Q)</span> </span>&#123; Q.front = Q.rear = <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(a1 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % MaxSize == Q.front) <span class="keyword">return</span> <span class="literal">false</span>; Q.data[Q.rear] = x; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(a1 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> (Q.front == Q.rear) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="comment">//a2</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">a2</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear, size; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(a2 &amp;Q)</span> </span>&#123; Q.front = Q.rear = Q.size = <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(a2 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> (Q.size == MaxSize) <span class="keyword">return</span> <span class="literal">false</span>; Q.data[Q.rear] = x; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; Q.size++; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(a2 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> (Q.size == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; Q.size--; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="comment">//a3</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">a3</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear; <span class="type">bool</span> tag; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(a3 &amp;Q)</span> </span>&#123; Q.front = Q.rear = <span class="number">0</span>; Q.tag = <span class="literal">false</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(a3 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> (Q.front == Q.rear &amp;&amp; Q.tag) <span class="keyword">return</span> <span class="literal">false</span>; Q.data[Q.rear] = x; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; Q.tag = <span class="literal">true</span>; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(a3 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> (Q.front == Q.rear &amp;&amp; !Q.tag) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; Q.tag = <span class="literal">false</span>; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="comment">//b1</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">b1</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(b1 &amp;Q)</span> </span>&#123; Q.front = <span class="number">0</span>; Q.rear = MaxSize - <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(b1 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> ((Q.rear + <span class="number">2</span>) % MaxSize == Q.front) <span class="keyword">return</span> <span class="literal">false</span>; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; Q.data[Q.rear] = x; <span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(b1 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % MaxSize == Q.front) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; <span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line"><span class="comment">//b2</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">b2</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear, size; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(b2 &amp;Q)</span> </span>&#123; Q.front = Q.size = <span class="number">0</span>; Q.rear = MaxSize - <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(b2 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> (Q.size == MaxSize) <span class="keyword">return</span> <span class="literal">false</span>; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; Q.data[Q.rear] = x; Q.size++; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(b2 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> (Q.size == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; Q.size--; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="comment">//b3</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">b3</span> &#123; ElemType data[MaxSize]; <span class="type">int</span> front, rear; <span class="type">bool</span> tag; &#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(b3 &amp;Q)</span> </span>&#123; Q.front = <span class="number">0</span>; Q.rear = <span class="number">-1</span>; Q.tag = <span class="literal">false</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(b3 &amp;Q, ElemType x)</span> </span>&#123; <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % MaxSize == Q.front &amp;&amp; Q.tag) <span class="keyword">return</span> <span class="literal">false</span>; Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize; Q.data[Q.rear] = x; Q.tag = <span class="literal">true</span>; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(b3 &amp;Q, ElemType &amp;x)</span> </span>&#123; <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % MaxSize == Q.front &amp;&amp; !Q.tag) <span class="keyword">return</span> <span class="literal">false</span>; x = Q.data[Q.front]; Q.front = (Q.front + <span class="number">1</span>) % MaxSize; Q.tag = <span class="literal">false</span>; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(a1 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- a1 &quot;</span>; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (Q.rear - Q.front + MaxSize) % MaxSize; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(a2 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- a2 &quot;</span>; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Q.size; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(a3 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- a3 &quot;</span>; <span class="type">int</span> size = ((Q.rear == Q.front) &amp;&amp; Q.tag) ? MaxSize : (Q.rear - Q.front + MaxSize) % MaxSize; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125; </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(b1 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- b1 &quot;</span>; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (Q.rear - Q.front + <span class="number">1</span> + MaxSize) % MaxSize; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(b2 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- b2 &quot;</span>; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Q.size; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(b3 &amp;Q)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;- b3 &quot;</span>; <span class="type">int</span> size = ((Q.rear - Q.front + <span class="number">1</span>) % MaxSize == <span class="number">0</span> &amp;&amp; Q.tag) ? MaxSize : (Q.rear - Q.front + <span class="number">1</span> + MaxSize) % MaxSize; <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i++) <span class="built_in">printf</span>(<span class="string">&quot;\e[33m%d\e[0m|&quot;</span>, Q.data[(Q.front + i) % MaxSize]); cout &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Do</span> <span class="params">(<span class="type">bool</span> fun, <span class="type">const</span> <span class="type">char</span>* msg)</span> </span>&#123; <span class="keyword">if</span> (!fun) <span class="built_in">printf</span>(<span class="string">&quot;\e[1;3;31m[%s]失败\e[0m   &quot;</span>); &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">testQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;执行\e[32m线性队列\e[0m测试\n&quot;</span>);</span><br><span class="line">    a1 a1; a2 a2; a3 a3; b1 b1; b2 b2; b3 b3;</span><br><span class="line">    <span class="built_in">InitQueue</span>(a1); <span class="built_in">InitQueue</span>(a2); <span class="built_in">InitQueue</span>(a3); <span class="built_in">InitQueue</span>(b1); <span class="built_in">InitQueue</span>(b2); <span class="built_in">InitQueue</span>(b3);</span><br><span class="line">    <span class="comment">///////////////////////</span></span><br><span class="line">    <span class="comment">// 此处修改测试代码</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把队列一次性填满</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MaxSize; i++) &#123; <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a1, i + <span class="number">1</span>), <span class="string">&quot;a1入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a2, i + <span class="number">1</span>), <span class="string">&quot;a2入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a3, i + <span class="number">1</span>), <span class="string">&quot;a3入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b1, i + <span class="number">1</span>), <span class="string">&quot;b1入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b2, i + <span class="number">1</span>), <span class="string">&quot;b2入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b3, i + <span class="number">1</span>), <span class="string">&quot;b3入队&quot;</span>); &#125; cout &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">PrintQueue</span>(a1); <span class="built_in">PrintQueue</span>(a2); <span class="built_in">PrintQueue</span>(a3); <span class="built_in">PrintQueue</span>(b1); <span class="built_in">PrintQueue</span>(b2); <span class="built_in">PrintQueue</span>(b3);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a1和b1各少了一个元素，恰好是通过\e[33m牺牲一个元素位置\e[0m来判断队空队满的体现。\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n\e[32m各出队 5 次\e[0m&quot;</span>);</span><br><span class="line">    ElemType res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123; <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(a1, res), <span class="string">&quot;a1出队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(a2, res), <span class="string">&quot;a2出队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(a3, res), <span class="string">&quot;a3出队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(b1, res), <span class="string">&quot;b1出队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(b2, res), <span class="string">&quot;b2出队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">DeQueue</span>(b3, res), <span class="string">&quot;b3出队&quot;</span>); &#125; cout &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">PrintQueue</span>(a1); <span class="built_in">PrintQueue</span>(a2); <span class="built_in">PrintQueue</span>(a3); <span class="built_in">PrintQueue</span>(b1); <span class="built_in">PrintQueue</span>(b2); <span class="built_in">PrintQueue</span>(b3);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n\e[32m各入队 3 次\e[0m&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123; <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a1, i + <span class="number">1</span>), <span class="string">&quot;a1入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a2, i + <span class="number">1</span>), <span class="string">&quot;a2入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(a3, i + <span class="number">1</span>), <span class="string">&quot;a3入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b1, i + <span class="number">1</span>), <span class="string">&quot;b1入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b2, i + <span class="number">1</span>), <span class="string">&quot;b2入队&quot;</span>); <span class="built_in">Do</span>(<span class="built_in">EnQueue</span>(b3, i + <span class="number">1</span>), <span class="string">&quot;b3入队&quot;</span>); &#125; cout &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">PrintQueue</span>(a1); <span class="built_in">PrintQueue</span>(a2); <span class="built_in">PrintQueue</span>(a3); <span class="built_in">PrintQueue</span>(b1); <span class="built_in">PrintQueue</span>(b2); <span class="built_in">PrintQueue</span>(b3);</span><br><span class="line"></span><br><span class="line">    <span class="comment">///////////////////////</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">testQueue</span>();</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="comment">@REM 文件名run.bat，运行程序的简易批处理脚本</span></span><br><span class="line">(g++ test.cpp -otest ) &amp;&amp; (</span><br><span class="line">    <span class="built_in">echo</span> 编译完成 正在执行</span><br><span class="line">    <span class="built_in">echo</span> +++++++++++++++++++++</span><br><span class="line">    (test) &amp;&amp; (</span><br><span class="line">        <span class="built_in">echo</span>.</span><br><span class="line">        <span class="built_in">echo</span> +++++++++++++++++++++</span><br><span class="line">        <span class="built_in">echo</span> 执行完成</span><br><span class="line">    ) ||(</span><br><span class="line">        <span class="built_in">echo</span>.</span><br><span class="line">        <span class="built_in">echo</span> ---------------------</span><br><span class="line">        <span class="built_in">echo</span> 程序执行出错)</span><br><span class="line">) || (<span class="built_in">echo</span> 编译出错)</span><br><span class="line"><span class="comment">@REM pause</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%94%A8%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%9A%84%206%20%E7%A7%8D%E6%83%85%E5%86%B5%20(C++)/" data-id="cl0bsr0r9000frcsf4u6w9tq9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2022/03/04/%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95URL%E5%9C%B0%E5%9D%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          视频测试URL地址
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据结构-二叉树相关代码</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">HTML实现水平垂直居中</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/">NodeJS 从安装到卸载再到重装</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/">React-Native 定义事件基类 EventBus</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/">Office 激活密钥</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/">conda及pip配置文件 - 已整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 hccodec<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

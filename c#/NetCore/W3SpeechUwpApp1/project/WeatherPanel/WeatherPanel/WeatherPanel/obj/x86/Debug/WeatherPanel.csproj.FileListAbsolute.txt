@@ -1,0 +1,9 @@
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\WeatherPanel.csprojAssemblyReference.cache
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\App.g.i.cs
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\App.g.cs
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\MainPage.g.i.cs
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\MainPage.g.cs
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\App.xaml
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\MainPage.xaml
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\App.xbf
+D:\documents\learn-codes\c#\NetCore\W3SpeechUwpApp1\project\WeatherPanel\WeatherPanel\WeatherPanel\obj\x86\Debug\MainPage.xbf

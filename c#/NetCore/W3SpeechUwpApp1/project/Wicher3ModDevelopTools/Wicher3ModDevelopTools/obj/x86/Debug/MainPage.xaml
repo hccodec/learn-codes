@@ -1,0 +1,88 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Wicher3ModDevelopTools.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Wicher3ModDevelopTools"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource AppBarBackgroundThemeBrush}">
+    <Page.Resources>
+        <x:String x:Key="audioPath">D:\Users\84697\Desktop\0x00122dd9.wav.ogg</x:String>
+    </Page.Resources>
+
+    <RelativePanel>
+        <ScrollViewer x:ConnectionId='2' x:Name="scrollContent"
+                      RelativePanel.AlignTopWithPanel="True"
+                      RelativePanel.AlignLeftWithPanel="True"
+                      RelativePanel.AlignRightWithPanel="True"
+                      RelativePanel.AlignBottomWithPanel="True">
+            <StackPanel Margin="20" Padding="20">
+                <StackPanel Margin="50">
+                    <StackPanel.Resources>
+                        <Storyboard x:ConnectionId='11' x:Name="myStoryboard">
+                            <DoubleAnimation
+                        Storyboard.TargetName="my3dTransform"
+                        Storyboard.TargetProperty="RotationY"
+                        From="0" To="-360" Duration="0:0:15" 
+                        RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </StackPanel.Resources>
+                    <StackPanel.Projection>
+                        <PlaneProjection x:ConnectionId='12' x:Name="my3dTransform" RotationX="0" RotationY="0" RotationZ="0"  />
+                    </StackPanel.Projection>
+                    <Ellipse Width="300" Height="175">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="Assets/Logo.png" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </StackPanel>
+                <Button x:ConnectionId='7'                      HorizontalAlignment="Center"
+                        Content=""
+                        />
+                <TextBox x:ConnectionId='8' x:Name="command" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"
+                         PlaceholderText="Type Your Command Here" />
+                <TextBlock x:ConnectionId='9' Name="text"                                   />
+                <StackPanel RequestedTheme="Default" Margin="0,50,0,0">
+                    <HyperlinkButton x:ConnectionId='10' x:Name="btn" Content="单击进入 Page 1"
+                                                                  
+                                     HorizontalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <CommandBar DefaultLabelPosition="Right"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Background="Transparent" IsSticky="False">
+            <AppBarButton x:ConnectionId='3' Label="播放声音"                     Icon="Emoji"/>
+            <AppBarButton x:ConnectionId='4' Label="实验"                    Icon="Emoji" Name="bigbutton" Background="Green" Foreground="AliceBlue">
+                <Button.Resources>
+                    <muxc:TeachingTip x:ConnectionId='6' x:Name="Tip"
+                                                                     
+                                          Title="第一条小提示"
+                                          Subtitle="这里用于显示命令执行的结果"/>
+                </Button.Resources>
+            </AppBarButton>
+            <AppBarButton Icon="Setting" Label="设置">
+                <AppBarButton.Flyout>
+                    <Flyout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <ToggleSwitch x:ConnectionId='5' x:Name="audioSwitch"
+                                          OffContent="声音关闭" OnContent="声音开启"
+                                                                        />
+                        </Grid>
+                    </Flyout>
+                </AppBarButton.Flyout>
+                <AppBarButton.KeyboardAccelerators>
+                    <KeyboardAccelerator Modifiers="Control" Key="I" />
+                </AppBarButton.KeyboardAccelerators>
+            </AppBarButton>
+        </CommandBar>
+    </RelativePanel>
+
+</Page>
+

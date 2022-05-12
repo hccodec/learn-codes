@@ -1,0 +1,76 @@
+这是来自HBJ的第二章单元作业
+import java.util.Scanner;
+public class JavaAppWorkHBJ
+{
+ public static void main(String args[])
+ {
+  Scanner scanner = new Scanner(System.in);//初始化Scanner类用于键盘标准输入流
+  System.out.print("请输入行数：");
+  int n=scanner.nextInt();//从键盘取得行数
+  int[][] a=new int[n][n];//初始化一个二维数组
+  for(int i=0;i<n;i++)
+  {
+   for(int j=0;j<=i;j++)
+   {
+    if(j==0) a[i][j]=1;
+    else a[i][j]=a[i-1][j-1]+a[i-1][j];//赋值
+    System.out.print(a[i][j]+"  ");
+    if(a[i][j]<10) System.out.print(" ");//输出值
+   }
+   System.out.print("\n");//控制格式
+  }
+ }
+}
+
+
+
+
+
+public class Prog1
+{
+   public static void main(String args[])
+    {
+/*****************FOUND*****************/
+     int  sum=0,n;//改前：int  sum=0;
+     for (n=1;n<=100;n++)
+       {
+/*****************FOUND*****************/
+          sum=0;//改前：sum=sum;
+          for(int k=1;k<n;k++)
+          {
+ /*****************FOUND*****************/
+             if(n%k==0)//改前：if(n/k==0)
+             sum+=k;
+         }
+ /*****************FOUND*****************/
+         if(sum==n)//改前：if(sum=n)
+            System.out.print(n+"\t");
+        }
+    }
+}
+
+
+
+
+
+
+public class Prog2
+{
+  public static void main(String args[])
+    { int i,j;
+       /***********FOUND***********/
+      for (i=1;i<=5;i++)//改前：for (i=1;i<5;i++)
+        {
+         for(j=1;j<=5-i;j++)
+           System.out.print("  ");
+         for (j=1;j<i;j++)
+          /***********FOUND***********/
+           System.out.print(j+" ");//改前：System.out.print(i+" ");
+          /***********FOUND***********/
+         for (j=i;j>=1;j--)//改前：for (j=i;j>1;j--)
+           System.out.print(j+" ");
+           /***********FOUND***********/
+         System.out.println();//改前：System.out.print();
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="20.0dip"
+    android:background="@drawable/custom_dialog"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20.0dip">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip">
+
+        <TextView
+            android:id="@+id/dialog_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="15dp"
+            android:text="@string/hint_dialog"
+            android:textColor="#17ff64"
+            android:textSize="20.0sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dialog_tv_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15.0dp"
+        android:text="@string/languageChooser"
+        android:textAlignment="gravity"
+        android:textColor="#aeffac"
+        android:textSize="18.0sp" />
+
+
+    <Spinner
+        android:id="@+id/languageChooser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:popupBackground="#00000000"
+        android:popupElevation="30dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10.0dip">
+
+        <Button
+            android:id="@+id/dialog_button_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="45.0dip"
+            android:layout_weight="1.0"
+            android:text="@string/confirm_dialog"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>

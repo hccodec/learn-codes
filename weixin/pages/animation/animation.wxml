@@ -1,0 +1,6 @@
+<!--pages/animation/animation.wxml-->
+<view class="container">
+  <image animation="{{animation}}" class='image' src='../../images/title.jpg'></image>
+</view>
+<button bindtap='{{which}}' type="{{_type}}" disabled='{{disabled}}'>{{text}}</button>
+<button bindtap='reset' style="background: lightblue; color: white" disabled='{{disabled}}'>还原</button>
